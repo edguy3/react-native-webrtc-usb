@@ -5,3 +5,5 @@ ios/RCTWebRTC.xcodeproj/xcuserdata
 ios/RCTWebRTC.xcodeproj/project.xcworkspace
 .DS_Store
 .idea
+/android/libuvccamera/build
+/android/libuvccommon/build
