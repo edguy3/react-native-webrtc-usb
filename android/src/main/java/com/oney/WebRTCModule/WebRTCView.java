@@ -1,8 +1,10 @@
 package com.oney.WebRTCModule;
 
 import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Point;
+import android.os.Build;
 import android.support.v4.view.ViewCompat;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +19,7 @@ import org.webrtc.MediaStream;
 import org.webrtc.RendererCommon;
 import org.webrtc.RendererCommon.RendererEvents;
 import org.webrtc.RendererCommon.ScalingType;
+import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.VideoRenderer;
 import org.webrtc.VideoTrack;
 
@@ -187,6 +190,7 @@ public class WebRTCView extends ViewGroup {
      * @return If this <tt>View</tt> has <tt>View#isInLayout()</tt>, invokes it
      * and returns its return value; otherwise, returns <tt>false</tt>.
      */
+    @TargetApi(Build.VERSION_CODES.KITKAT)
     private boolean invokeIsInLayout() {
         Method m = IS_IN_LAYOUT;
         boolean b = false;

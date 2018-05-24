@@ -3,14 +3,12 @@ package com.oney.WebRTCModule;
 import android.util.Log;
 
 import org.webrtc.EglBase;
-import org.webrtc.EglBase10;
-import org.webrtc.EglBase14;
 
 public class EglUtils {
     /**
      * The root {@link EglBase} instance shared by the entire application for
      * the sake of reducing the utilization of system resources (such as EGL
-     * contexts). It selects between {@link EglBase10} and {@link EglBase14}
+     * contexts). It selects between EglBase10 and EglBase14
      * by performing a runtime check.
      */
     private static EglBase rootEglBase;
@@ -30,12 +28,7 @@ public class EglUtils {
             RuntimeException cause = null;
 
             try {
-                if (EglBase14.isEGL14Supported()) {
-                    eglBase
-                        = new EglBase14(
-                                /* sharedContext */ null,
-                                configAttributes);
-                }
+                eglBase = EglBase.createEgl14(configAttributes);
             } catch (RuntimeException ex) {
                 // Fall back to EglBase10.
                 cause = ex;
@@ -43,10 +36,16 @@ public class EglUtils {
 
             if (eglBase == null) {
                 try {
-                    eglBase
-                        = new EglBase10(
-                                /* sharedContext */ null,
-                                configAttributes);
+                    eglBase = EglBase.createEgl10(configAttributes);
+                } catch (RuntimeException ex) {
+                    // Neither EglBase14, nor EglBase10 succeeded to initialize.
+                    cause = ex;
+                }
+            }
+
+            if (eglBase == null) {
+                try {
+                    eglBase = EglBase.create();
                 } catch (RuntimeException ex) {
                     // Neither EglBase14, nor EglBase10 succeeded to initialize.
                     cause = ex;
@@ -69,3 +68,4 @@ public class EglUtils {
         return eglBase == null ? null : eglBase.getEglBaseContext();
     }
 }
+

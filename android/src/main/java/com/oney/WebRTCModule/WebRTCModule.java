@@ -26,6 +26,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.Executors;
 
 import org.webrtc.*;
 
@@ -59,10 +60,11 @@ public class WebRTCModule extends ReactContextBaseJavaModule {
         localStreams = new HashMap<String, MediaStream>();
         localTracks = new HashMap<String, MediaStreamTrack>();
 
-        PeerConnectionFactory.initializeAndroidGlobals(reactContext, true, true, true);
 
-        mFactory = new PeerConnectionFactory(null);
-        // Initialize EGL contexts required for HW acceleration.
+        PeerConnectionFactory.initialize(PeerConnectionFactory.InitializationOptions.builder(reactContext)
+                .setEnableVideoHwAcceleration(true).createInitializationOptions());
+
+        mFactory = PeerConnectionFactory.builder().createPeerConnectionFactory();
         EglBase.Context eglContext = EglUtils.getRootEglBaseContext();
         if (eglContext != null) {
             mFactory.setVideoHwAccelerationOptions(eglContext, eglContext);

@@ -42,9 +42,6 @@ public class PermissionUtils {
         if (context instanceof Activity) {
             return (Activity) context;
         }
-        if (context instanceof ReactContext) {
-            return ((ReactContext) context).getCurrentActivity();
-        }
         return null;
     }
 
@@ -235,7 +232,10 @@ public class PermissionUtils {
 
             for (int i = 0; i < size; ++i) {
                 String permission = permissions[i];
-                int grantResult = activity.checkSelfPermission(permission);
+                int grantResult = 0;
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    grantResult = activity.checkSelfPermission(permission);
+                }
 
                 grantResults[i] = grantResult;
                 if (grantResult != PackageManager.PERMISSION_GRANTED) {
@@ -256,10 +256,12 @@ public class PermissionUtils {
                     grantResults);
             } else {
                 // Ask the user about the denied permissions.
-                requestPermissions(
-                    deniedPermissions.toArray(
-                        new String[deniedPermissions.size()]),
-                    requestCode);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    requestPermissions(
+                        deniedPermissions.toArray(
+                            new String[deniedPermissions.size()]),
+                        requestCode);
+                }
             }
         }
 
