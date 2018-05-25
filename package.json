@@ -1,9 +1,9 @@
 {
   "name": "react-native-webrtc-usb",
-  "version": "1.0",
+  "version": "1.1",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oney/react-native-webrtc-usb.git"
+    "url": "git+https://github.com/jatecl/react-native-webrtc-usb.git"
   },
   "nativePackage": true,
   "description": "WebRTC for React Native with android usb camera",
@@ -11,7 +11,7 @@
     "name": "Jat",
     "email": "jatoanw@qq.com"
   },
-  "homepage": "https://github.com/oney/react-native-webrtc-usb",
+  "homepage": "https://github.com/jatecl/react-native-webrtc-usb",
   "keywords": [
     "react-component",
     "react-native",
@@ -29,6 +29,6 @@
     "react-native": ">=0.40.0"
   },
   "bugs": {
-    "url": "https://github.com/oney/react-native-webrtc-usb/issues"
+    "url": "https://github.com/jatecl/react-native-webrtc-usb/issues"
   }
 }
