@@ -1,2 +1,5 @@
-include ':libuvccommon', ':libuvccamera', ':usbwebrtc'
+include ':libuvccommon'
+include ':libuvccamera'
+include ':usbwebrtc'
+
 
