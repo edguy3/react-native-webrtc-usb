@@ -7,3 +7,4 @@ ios/RCTWebRTC.xcodeproj/project.xcworkspace
 .idea
 /android/libuvccamera/build
 /android/libuvccommon/build
+/android/build

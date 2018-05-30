@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id="android" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$" external.system.id="GRADLE" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":WebRTCModule" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/../../react-native-webrtc-usb-test/android" external.system.id="GRADLE" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="android-gradle" name="Android-Gradle">
       <configuration>
-        <option name="GRADLE_PROJECT_PATH" value=":" />
+        <option name="GRADLE_PROJECT_PATH" value=":WebRTCModule" />
       </configuration>
     </facet>
     <facet type="android" name="Android">
@@ -95,13 +95,13 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/javaPrecompile" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jniLibs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/library_and_local_jars_jni" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/lint" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifests" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/packaged-aidl" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/packaged-classes" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/packagedAssets" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/packaged_res" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/public_res" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/publish-proguard" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/res" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/rs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/shaders" />
@@ -112,31 +112,30 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 27 Platform (2)" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Gradle: com.android.support:recyclerview-v7-23.0.1" level="project" />
-    <orderEntry type="library" name="Gradle: commons-cli:commons-cli:1.2@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.squareup.okhttp:okhttp:2.5.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.parse.bolts:bolts-android:1.1.4@jar" level="project" />
-    <orderEntry type="library" name="Gradle: libuvccommon-release:@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.facebook.stetho:stetho-okhttp:1.2.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.2.3@jar" level="project" />
-    <orderEntry type="library" name="Gradle: org.webkit:android-jsc-r174650" level="project" />
-    <orderEntry type="library" name="Gradle: com.facebook.stetho:stetho:1.2.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.facebook.fresco:drawee-0.8.1" level="project" />
     <orderEntry type="library" name="Gradle: com.nineoldandroids:library:2.4.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okhttp:okhttp-ws:2.5.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:fresco-0.8.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:recyclerview-v7-23.0.1" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:appcompat-v7-23.0.1" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:fbcore-0.8.1" level="project" />
+    <orderEntry type="library" name="Gradle: commons-cli:commons-cli:1.2@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.parse.bolts:bolts-android:1.1.4@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.okhttp:okhttp:2.5.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: libuvccamera-release:@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.findbugs:jsr305:3.0.2@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.react:react-native-0.20.1" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-v4-23.0.1" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okio:okio:1.6.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: libuvccommon-release:@aar" level="project" />
     <orderEntry type="library" name="Gradle: org.webrtc:google-webrtc-1.0.22920" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:imagepipeline-0.8.1" level="project" />
-    <orderEntry type="library" name="Gradle: usbwebrtc-release:@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.facebook.stetho:stetho-okhttp:1.2.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-annotations:23.0.1@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.2.3@jar" level="project" />
+    <orderEntry type="library" name="Gradle: org.webkit:android-jsc-r174650" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:imagepipeline-okhttp-0.8.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.facebook.stetho:stetho:1.2.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.facebook.fresco:drawee-0.8.1" level="project" />
     <orderEntry type="library" name="Gradle: android-android-27" level="project" />
   </component>
 </module>

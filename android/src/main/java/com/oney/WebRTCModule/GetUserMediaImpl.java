@@ -14,6 +14,7 @@ import com.facebook.react.bridge.ReadableType;
 import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.Promise;
+import com.relywisdom.usbwebrtc.UsbCameraEnumerator;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -367,8 +368,9 @@ class GetUserMediaImpl {
         //   see: https://developer.android.com/reference/android/hardware/camera2/CameraCharacteristics.html#INFO_SUPPORTED_HARDWARE_LEVEL
         // TODO Enable camera2 enumerator
         Context context = getReactApplicationContext();
-        CameraEnumerator cameraEnumerator;
+        UsbCameraEnumerator cameraEnumerator = new UsbCameraEnumerator(context);
 
+        /*
         if (Camera2Enumerator.isSupported(context)) {
             Log.d(TAG, "Creating video capturer using Camera2 API.");
             cameraEnumerator = new Camera2Enumerator(context);
@@ -376,13 +378,15 @@ class GetUserMediaImpl {
             Log.d(TAG, "Creating video capturer using Camera1 API.");
             cameraEnumerator = new Camera1Enumerator(false);
         }
+        */
+
 
         String facingMode = getFacingMode(videoConstraintsMap);
         boolean isFacing
             = facingMode == null || !facingMode.equals("environment");
         String sourceId = getSourceIdConstraint(videoConstraintsMap);
-        VideoCapturer videoCapturer
-            = createVideoCapturer(cameraEnumerator, isFacing, sourceId);
+
+        VideoCapturer videoCapturer = createVideoCapturer(cameraEnumerator, isFacing, sourceId);
         if (videoCapturer == null) {
             return null;
         }

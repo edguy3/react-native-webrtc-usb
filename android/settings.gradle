@@ -1,5 +1,1 @@
-include ':libuvccommon'
-include ':libuvccamera'
-include ':usbwebrtc'
-
 
