@@ -13,12 +13,8 @@
   },
   "homepage": "https://github.com/jatecl/react-native-webrtc-usb",
   "keywords": [
-    "react-component",
-    "react-native",
-    "ios",
-    "android",
-    "webrtc",
-    "usbcamera"
+    "usb webrtc",
+    "webrtc usb"
   ],
   "dependencies": {
     "base64-js": "^1.1.2",
