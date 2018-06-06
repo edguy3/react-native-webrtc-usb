@@ -27,6 +27,8 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.Executors;
+import android.content.Context;
+import android.hardware.usb.UsbManager;
 
 import org.webrtc.*;
 
@@ -53,8 +55,11 @@ public class WebRTCModule extends ReactContextBaseJavaModule {
      */
     private final GetUserMediaImpl getUserMediaImpl;
 
+    private final UsbManager mUsbManager;
+
     public WebRTCModule(ReactApplicationContext reactContext) {
         super(reactContext);
+        mUsbManager = (UsbManager)reactContext.getSystemService(Context.USB_SERVICE);
 
         mPeerConnectionObservers = new SparseArray<PeerConnectionObserver>();
         localStreams = new HashMap<String, MediaStream>();
@@ -505,6 +510,20 @@ public class WebRTCModule extends ReactContextBaseJavaModule {
             if (info != null) {
                 array.pushMap(info);
             }
+        }
+
+        try {
+            if (mUsbManager.getDeviceList().size() > 0) {            
+                WritableMap params = Arguments.createMap();
+                params.putString("label", "Camera " + Camera.getNumberOfCameras() + ", Facing usb, Orientation auto");
+                params.putString("id", "" + Camera.getNumberOfCameras());
+                params.putString("facing", "usb");
+                params.putString("kind", "video");
+                array.pushMap(params);
+            }
+        }
+        catch(Exception exp) {
+            exp.printStackTrace();
         }
 
         WritableMap audio = Arguments.createMap();
