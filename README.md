@@ -1,3 +1,6 @@
+
+Rebuilt commit history in order to see if there was anything useful.
+
 # react-native-webrtc-usb-lib
 
 <!-- forked from https://github.com/oney/react-native-webrtc
