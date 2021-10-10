@@ -1,6 +1,7 @@
 
 Rebuilt commit history in order to see if there was anything useful.
 
+```
 $ git remote -v
 origin	git@github.com:edguy3/react-native-webrtc-usb.git (fetch)
 origin	git@github.com:edguy3/react-native-webrtc-usb.git (push)
@@ -10,7 +11,7 @@ react-native-webrtc-usb-fork	https://github.com/jatecl/react-native-webrtc-usb (
 react-native-webrtc-usb-fork	https://github.com/jatecl/react-native-webrtc-usb (push)
 upstream	git@github.com:react-native-webrtc/react-native-webrtc.git (fetch)
 upstream	git@github.com:react-native-webrtc/react-native-webrtc.git (push)
-
+```
 
 # react-native-webrtc-usb-lib
 
