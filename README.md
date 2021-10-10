@@ -1,6 +1,17 @@
 
 Rebuilt commit history in order to see if there was anything useful.
 
+$ git remote -v
+origin	git@github.com:edguy3/react-native-webrtc-usb.git (fetch)
+origin	git@github.com:edguy3/react-native-webrtc-usb.git (push)
+react-native-webrtc-usb-copy	https://github.com/sohel-khan/react-native-webrtc-usb-lib (fetch)
+react-native-webrtc-usb-copy	https://github.com/sohel-khan/react-native-webrtc-usb-lib (push)
+react-native-webrtc-usb-fork	https://github.com/jatecl/react-native-webrtc-usb (fetch)
+react-native-webrtc-usb-fork	https://github.com/jatecl/react-native-webrtc-usb (push)
+upstream	git@github.com:react-native-webrtc/react-native-webrtc.git (fetch)
+upstream	git@github.com:react-native-webrtc/react-native-webrtc.git (push)
+
+
 # react-native-webrtc-usb-lib
 
 <!-- forked from https://github.com/oney/react-native-webrtc
