@@ -8,3 +8,4 @@ ios/RCTWebRTC.xcodeproj/project.xcworkspace
 /android/libuvccamera/build
 /android/libuvccommon/build
 /android/build
+.gitattributes

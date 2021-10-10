@@ -1,16 +1,16 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
-        minSdkVersion 18
-        targetSdkVersion 27
+        minSdkVersion 19
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         ndk {
-            abiFilters "arm64-v8a", "armeabi-v7a", "armeabi", "x86"
+            abiFilters "armeabi-v7a", "x86"
         }
     }
     compileOptions {
@@ -26,7 +26,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.2'
+        classpath 'com.android.tools.build:gradle:3.4.2'
 
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -34,23 +34,40 @@ buildscript {
     }
 }
 
+// allprojects {
+//     repositories {
+//         google()
+//         jcenter()
+//     }
+// }
+
+// repositories {
+//     flatDir {
+//         dirs 'libs'
+//     }
+// }
+
 allprojects {
     repositories {
+        // mavenLocal()
         google()
         jcenter()
+        // maven { url 'https://www.jitpack.io' }
+    // mavenCentral()
+          flatDir {
+            dirs 'libs'
+        }
     }
 }
 
-repositories {
-    flatDir {
-        dirs 'libs'
-    }
-}
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.facebook.react:react-native:0.20.1'
+    implementation 'com.facebook.react:react-native:+'
     implementation 'org.webrtc:google-webrtc:1.0.22920'
-    implementation(name:'libuvccommon-release', ext:'aar')
-    implementation(name:'libuvccamera-release', ext:'aar')
+    // implementation(name:'libuvccommon-release', ext:'aar')
+    // implementation(name:'libuvccamera-release', ext:'aar')
+    implementation files('libs/libuvccommon-release.aar', 'libs/libuvccamera-release.aar')
+
+
 }

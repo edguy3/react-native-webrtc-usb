@@ -1,19 +1,22 @@
-# react-native-webrtc-usb
+# react-native-webrtc-usb-lib
 
-forked from https://github.com/oney/react-native-webrtc
-usb just for android.
+<!-- forked from https://github.com/oney/react-native-webrtc
+usb just for android. -->
 
+Forked from https://github.com/jatecl/react-native-webrtc-usb and upgraded package versions, solved few Bugs and published my own npm.
+Credit goes to [#jatecl](https://www.npmjs.com/~jatecl)
+ 
 [![npm version](https://badge.fury.io/js/react-native-webrtc.svg)](https://badge.fury.io/js/react-native-webrtc)
 [![npm downloads](https://img.shields.io/npm/dm/react-native-webrtc.svg?maxAge=2592000)](https://img.shields.io/npm/dm/react-native-webrtc.svg?maxAge=2592000)
 
 A WebRTC module for React Native.
-
+<!-- 
 # BREAKING FOR RN 40:
 
-`master` branch needs RN >= 40 for now.
+`master` branch needs RN >= 0.62.0 for now.
 if your RN version is under 40, use branch [rn-less-40](https://github.com/oney/react-native-webrtc/tree/rn-less-40) (npm version `0.54.7`)
 
-see [#190](https://github.com/oney/react-native-webrtc/pull/190) for detials
+see [#190](https://github.com/oney/react-native-webrtc/pull/190) for detials -->
 
 ## Support
 - Currently support for iOS and Android.  
@@ -21,137 +24,426 @@ see [#190](https://github.com/oney/react-native-webrtc/pull/190) for detials
 - Supports data channels.  
 - You can use it to build an iOS/Android app that can communicate with web browser.  
 
-## WebRTC Revision
-
-Since `0.53`, we use same branch version number like in webrtc native.
-please see [wiki page](https://github.com/oney/react-native-webrtc/wiki) about revision history
-
-### format:
-
-`${branch_name} stable (${branched_from_revision})(+${Cherry-Picks-Num}-${Last-Cherry-Picks-Revision})`
-
-* the webrtc revision in brackets is extracting frrom `Cr-Branched-From` instead `Cr-Commit-Position`  
-* the number follows with `+` is the additional amount of cherry-picks since `Branched-From` revision.
-
-### note:
-the order of commit revision is nothing to do with the order of cherry-picks, for example, the earlier committed `cherry-pick-#2` may have higher revision than `cherry-pick-#3` and vice versa.
-
-| react-native-webrtc | WebRTC Version | arch(ios) | arch(android)  | npm published | note | additional picks |
-| :-------------: | :-------------:| :-----: | :-----: | :-----: | :-----: | :-----: |
-| 0.54.7 | [M54](https://chromium.googlesource.com/external/webrtc/+/branch-heads/54)<br>(13869)<br>(+6-14091) | x86_64<br>i386<br>armv7<br>arm64 | armeabi-v7a<br>x86 | :heavy_check_mark: | RN < 40 | |
-| 1.57.1 | [M57](https://chromium.googlesource.com/external/webrtc/+/branch-heads/57)<br>(16123)<br>(+7-16178) | x86_64<br>i386<br>armv7<br>arm64 | armeabi-v7a<br>x86 | :heavy_check_mark: | |* [16805](https://chromium.googlesource.com/external/webrtc/+/0e22a4cfd3790d80ad1ae699891341fe322cb418)<br>* [16462](https://chromium.googlesource.com/external/webrtc.git/+/1634e160426df926e14cf9f1e5346d2a1dc9c909)  |
-| 1.58.3| [M58](https://chromium.googlesource.com/external/webrtc/+/branch-heads/58)<br>[commit](https://chromium.googlesource.com/external/webrtc/+/6504196a312da382d75c5ff577d10207793f2907)<br>(16937)<br>(+21-18206) | x86_64<br>i386<br>armv7<br>arm64 | armeabi-v7a<br>x86 | :heavy_check_mark: | :sparkles: Promise Support :sparkles: | * [17065](https://chromium.googlesource.com/external/webrtc/+/d1587ad244af3388c1282a715cdf05032ba0c2fc)<br>* [17925](https://chromium.googlesource.com/external/webrtc/+/f68426954154918ec5bf7e6b3096fa3d7acb0944)<br>* [18140](https://chromium.googlesource.com/external/webrtc/+/7daab660ce0e35fecad717fefab4cf935d3c253e)<br>* [18277](https://chromium.googlesource.com/external/webrtc/+/eae4564cb7dea3ad9f5963814e82fd823267ff89) |
-| master| [M58](https://chromium.googlesource.com/external/webrtc/+/branch-heads/58)<br>[commit](https://chromium.googlesource.com/external/webrtc/+/6504196a312da382d75c5ff577d10207793f2907)<br>(16937)<br>(+21-18206) | x86_64<br>i386<br>armv7<br>arm64 | armeabi-v7a<br>x86 | :warning: | test me plz | * [17065](https://chromium.googlesource.com/external/webrtc/+/d1587ad244af3388c1282a715cdf05032ba0c2fc)<br>* [17925](https://chromium.googlesource.com/external/webrtc/+/f68426954154918ec5bf7e6b3096fa3d7acb0944)<br>* [18140](https://chromium.googlesource.com/external/webrtc/+/7daab660ce0e35fecad717fefab4cf935d3c253e)<br>* [18277](https://chromium.googlesource.com/external/webrtc/+/eae4564cb7dea3ad9f5963814e82fd823267ff89) |
-
 ## Installation
 
 ### react-native-webrtc:
 
-- [iOS](https://github.com/oney/react-native-webrtc/blob/master/Documentation/iOSInstallation.md)
+<!-- - [iOS](https://github.com/oney/react-native-webrtc/blob/master/Documentation/iOSInstallation.md) -->
 - [Android](https://github.com/oney/react-native-webrtc/blob/master/Documentation/AndroidInstallation.md)
 
-note: 0.10.0~0.12.0 required `git-lfs`, see: [git-lfs-installation](https://github.com/oney/react-native-webrtc/blob/master/Documentation/git-lfs-installation.md)
+<!-- note: 0.10.0~0.12.0 required `git-lfs`, see: [git-lfs-installation](https://github.com/oney/react-native-webrtc/blob/master/Documentation/git-lfs-installation.md) -->
 
 ## Usage
 Now, you can use WebRTC like in browser.
 In your `index.ios.js`/`index.android.js`, you can require WebRTC to import RTCPeerConnection, RTCSessionDescription, etc.
+Anything about using RTCPeerConnection, RTCSessionDescription and RTCIceCandidate is like browser.  
+Support most WebRTC APIs, please see the [Document](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection).
 ```javascript
-var WebRTC = require('react-native-webrtc');
-var {
+
+import React from 'react';
+import {
+  SafeAreaView,
+  StyleSheet,
+  ScrollView,
+  View,
+  Text,
+  Alert,
+  TouchableOpacity,
+  Dimensions,
+  BackHandler
+} from 'react-native';
+
+import {
   RTCPeerConnection,
   RTCIceCandidate,
   RTCSessionDescription,
   RTCView,
   MediaStream,
   MediaStreamTrack,
-  getUserMedia,
-} = WebRTC;
-```
-Anything about using RTCPeerConnection, RTCSessionDescription and RTCIceCandidate is like browser.  
-Support most WebRTC APIs, please see the [Document](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection).
-```javascript
-var configuration = {"iceServers": [{"url": "stun:stun.l.google.com:19302"}]};
-var pc = new RTCPeerConnection(configuration);
+	getUserMedia,
+	
+} from "react-native-webrtc-usb-lib";
 
-let isFront = true;
-MediaStreamTrack
-  .getSources()
-  .then(sourceInfos => {
-    console.log(sourceInfos);
-    let videoSourceId;
-    for (let i = 0; i < sourceInfos.length; i++) {
-      const sourceInfo = sourceInfos[i];
-      if(sourceInfo.kind == "video" && sourceInfo.facing == (isFront ? "front" : "back")) {
-        videoSourceId = sourceInfo.id;
+import io from 'socket.io-client'
+import { SOCKET_IO_SERVER} from "./config"
+
+const dimensions = Dimensions.get('window')
+
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.sdp
+    this.socket = null
+    this.candidates = [];
+
+    this.serviceIP = SOCKET_IO_SERVER
+
+    this.state = {
+      localStream: null,
+      remoteStream: null,
+      disconnected: false,
+      isCalling: false,
+
+      pc_config: {
+        "iceServers": [
+          {
+            urls : 'stun:stun.l.google.com:19302'
+          }
+        ]
+      },
+
+      sdpConstraints: {
+        'mandatory': {
+            'OfferToReceiveAudio': true,
+            'OfferToReceiveVideo': true
+        }
+      },
+    }
+  }
+
+
+  componentDidMount = () => {
+
+		const { roomId} = "test";
+    
+    this.socket = io.connect(
+      this.serviceIP,
+      {
+        path: '/io/webrtc',
+        query: {
+          room: `/${roomId.toLocaleLowerCase().trim()}`
+        }
+      }
+    )
+
+    this.socket.on('connection-success', success => {
+      console.log("connection-success ::", success)
+    })
+
+    this.socket.on('offerOrAnswer', (sdp) => {
+
+      this.sdp = JSON.stringify(sdp)
+
+      // set sdp as remote description
+      this.pc.setRemoteDescription(new RTCSessionDescription(sdp))
+      this.setState({isCalling: true})
+
+    })
+
+    this.socket.on('candidate', (candidate) => {
+      // console.log('From Peer... ', JSON.stringify(candidate))
+      this.pc.addIceCandidate(new RTCIceCandidate(candidate))
+
+    })
+
+
+    this.pc = new RTCPeerConnection(this.state.pc_config)
+
+    this.pc.onicecandidate = (e) => {
+      // send the candidates to the remote peer
+      // see addCandidate below to be triggered on the remote peer
+      if (e.candidate) {
+        // console.log(JSON.stringify(e.candidate))
+        this.sendToPeer('candidate', e.candidate)
       }
     }
-    return getUserMedia({
-      audio: true,
-      video: {
-        mandatory: {
-          minWidth: 500, // Provide your own width, height and frame rate here
-          minHeight: 300,
-          minFrameRate: 30
-        },
-        facingMode: (isFront ? "user" : "environment"),
-        optional: (videoSourceId ? [{sourceId: videoSourceId}] : [])
+
+    // triggered when there is a change in connection state
+    this.pc.oniceconnectionstatechange = (e) => {
+      // console.log(e)
+    }
+
+    this.pc.onaddstream = (e) => {
+      // debugger
+      this.setState({
+        remoteStream: e.stream
+      })
+    }
+
+    this.socket.on('peer-disconnected', data => {
+      console.log('In peer-disconnected', data)
+      console.log('In peer-disconnected--', this.state.remoteStream);
+
+      if(this.state.remoteStream){
+
+        this.stopTracks(this.state.remoteStream);
+        // this.pc.close()
+
+        this.setState({
+          disconnected: true,
+          remoteStream: null,
+          isCalling: false,
+        })
+        Alert.alert(
+          'Call Ended',
+          'Your friend has ended a call...',
+          [
+            {
+              text: 'OK',
+              onPress: () => {
+              this.props.navigation.goBack();
+                
+              },
+            },
+          ],
+          {cancelable: false},
+        );
+
       }
+
+    })
+    
+    const success = (stream) => {
+      // console.log("In getUserMedia success ::", stream)
+      this.setState({
+        localStream: stream
+      })
+      this.pc.addStream(stream)
+    }
+
+    const failure = (e) => {
+      console.log('getUserMedia Error: ', e)
+    }
+
+		let isFront = true;
+		
+		MediaStreamTrack
+		.getSources()
+		.then(async sourceInfos => {
+			// console.log("devices list ::", sourceInfos);
+			
+			let videoSourceId, device;
+			for (let i = 0; i < sourceInfos.length; i++) {
+				const sourceInfo = sourceInfos[i];
+				if(sourceInfo.kind == "video" || sourceInfo.facing == "usb") {
+
+					videoSourceId = sourceInfo.id;
+					device = sourceInfo.facing
+				}
+			}
+			console.log("videoSourceId  ::", videoSourceId, device);
+
+      const constraints = {
+        audio: true,
+        video: {
+          mandatory: {
+            minWidth: 1280, // Provide your own width, height and frame rate here
+            minHeight: 720,
+            minFrameRate: 30
+          },
+          facingMode: (isFront ? "user" : "environment"),
+          optional: (videoSourceId ? [{ sourceId: videoSourceId }] : [])
+        }
+      }
+
+      return getUserMedia(constraints)
+        .then(success)
+        .catch(failure);
     });
-  })
-  .then(stream => {
-    console.log('dddd', stream);
-    return stream
-  })
-  .catch(logError);
+  }
 
-pc.createOffer()
-  .then(pc.setLocalDescription)
-  .then(() => {
-    // Send pc.localDescription to peer
-  })
-  .catch(logError);
+    sendToPeer = (messageType, payload) => {
+      // console.log('=================================')
+      
+      // console.log('sendToPeer ::', messageType, payload);
+      // console.log('=================================')
 
-pc.onicecandidate = function (event) {
-  // send event.candidate to peer
+      this.socket.emit(messageType, {
+        socketID: this.socket.id,
+        payload
+      })
+    }
+
+    createOffer = () => {
+      console.log('Offer')
+  
+      // https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/createOffer
+      // initiates the creation of SDP
+      this.pc.createOffer(this.state.sdpConstraints)
+        .then(sdp => {
+          // console.log(JSON.stringify(sdp))
+  
+          // set offer sdp as local description
+          this.pc.setLocalDescription(sdp)
+          this.setState({isCalling: true})
+  
+          this.sendToPeer('offerOrAnswer', sdp)
+      })
+      .catch(err => console.log("In createOffer catch ::", err))
+
+    }
+    
+    createAnswer = () => {
+      console.log('Answer')
+      this.pc.createAnswer(this.state.sdpConstraints)
+        .then(sdp => {
+          this.pc.setLocalDescription(sdp)
+  
+          this.sendToPeer('offerOrAnswer', sdp)
+      })
+      .catch(err => console.log("In answer catch ::", err))
+    }
+
+    setRemoteDescription = () => {
+      // retrieve and parse the SDP copied from the remote peer
+      const desc = JSON.parse(this.sdp)
+  
+      // set sdp as remote description
+      this.pc.setRemoteDescription(new RTCSessionDescription(desc))
+    }
+
+    addCandidate = () => {
+      this.candidates.forEach(candidate => {
+        console.log(JSON.stringify(candidate))
+        this.pc.addIceCandidate(new RTCIceCandidate(candidate))
+      });
+    }
+
+    stopTracks = (stream) => {
+      stream.getTracks().forEach(track => track.stop());
+    }
+
+    disconnect = ()=>{
+      this.stopTracks(this.state.localStream);
+      this.socket.close();
+      this.pc.close()
+      this.props.navigation.goBack();
+    }
+
+  render() {
+    const {
+      localStream,
+      remoteStream,
+    } = this.state
+
+    const remoteVideo = remoteStream ?
+      (
+        <RTCView
+              // key={1}
+              // zOrder={0}
+              objectFit='cover'
+              style={{ ...styles.rtcView }}
+              streamURL={remoteStream && remoteStream.toURL()}
+              />
+      ) :
+      (
+        <View style={{ padding: 15, }}>
+          <Text style={{ fontSize:22, textAlign: 'center', color: 'white' }}>Waiting for Peer connection ...</Text>
+        </View>
+      )
+
+    return (
+      
+      <SafeAreaView style={{ flex: 1, }}>
+          <View style={{...styles.buttonsContainer}}>
+            { this.state.remoteStream == null &&
+            <View style={{ flex: 1, }}>
+              <TouchableOpacity onPress={this.createOffer}>
+                  <View style={styles.button}>
+                  <Text style={{ ...styles.textContent, }}>{ this.state.isCalling ? "Calling..." :"Call"}</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+            }
+
+            { this.state.isCalling && this.state.remoteStream != null && 
+            <View style={{ flex: 1, }}>
+              <TouchableOpacity onPress={this.createAnswer}>
+                <View style={styles.button}>
+                  <Text style={{ ...styles.textContent, }}>Answer</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+            }
+
+          { this.state.remoteStream != null &&
+
+            <View style={{ flex: 1, }}>
+              <TouchableOpacity onPress={this.disconnect}>
+                <View style={styles.button}>
+                  <Text style={{ ...styles.textContent, color: 'red'}}>Disconnect</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+           }
+
+          </View>
+          <View style={{ ...styles.videosContainer, }}>
+          
+              <View style={{flex: 1 }}>
+                  <View>
+                  <RTCView
+                    objectFit='cover'
+                    style={{ ...styles.rtcView }}
+                    streamURL={this.state.localStream && this.state.localStream.toURL()}
+                    />
+                  </View>
+              </View>
+          </View>
+
+          <ScrollView style={{ ...styles.scrollView }}>
+            <View style={{
+              flex: 1,
+              width: '100%',
+              backgroundColor: 'black',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+              { remoteVideo }
+            </View>
+          </ScrollView>
+        </SafeAreaView>
+      );
+  }
 };
 
-// also support setRemoteDescription, createAnswer, addIceCandidate, onnegotiationneeded, oniceconnectionstatechange, onsignalingstatechange, onaddstream
-
-```
-However, render video stream should be used by React way.
-
-Rendering RTCView.
-```javascript
-var container;
-var RCTWebRTCDemo = React.createClass({
-  getInitialState: function() {
-    return {videoURL: null};
+const styles = StyleSheet.create({
+  buttonsContainer: {
+    flexDirection: 'row',
   },
-  componentDidMount: function() {
-    container = this;
+  button: {
+    margin: 5,
+    paddingVertical: 10,
+    backgroundColor: 'lightgrey',
+    borderRadius: 5,
   },
-  render: function() {
-    return (
-      <View>
-        <RTCView streamURL={this.state.videoURL}/>
-      </View>
-    );
+  textContent: {
+    fontFamily: 'Avenir',
+    fontSize: 20,
+    textAlign: 'center',
+  },
+  videosContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginLeft: 20
+  },
+  rtcView: {
+    width: 300, //dimensions.width,
+    height: 250,//dimensions.height / 2,
+    backgroundColor: 'black',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  scrollView: {
+    flex: 1,
+    // flexDirection: 'row',
+    backgroundColor: 'teal',
+    padding: 15,
+  },
+  rtcViewRemote: {
+    width: dimensions.width - 30,
+    height: 300,//dimensions.height / 2,
+    backgroundColor: 'black',
   }
 });
+
+export default App;
+
 ```
-And set stream to RTCView
-```javascript
-container.setState({videoURL: stream.toURL()});
-```
 
-### Custom APIs
-
-#### MediaStreamTrack.prototype._switchCamera()
-
-This function allows to switch the front / back cameras in a video track
-on the fly, without the need for adding / removing tracks or renegotiating.
-
-## Demos
+<!-- ## Demos
 
 **Official Demo**
 
@@ -165,10 +457,4 @@ You can open this website in browser, and then set it as signaling server in the
 
 author: [@thoqbk](https://github.com/thoqbk)
 - Signaling server and web app: https://rewebrtc.herokuapp.com/ (the repository is https://github.com/thoqbk/rewebrtc-server)
-- React native app repository: https://github.com/thoqbk/rewebrtc
-
-## Native control
-Use [react-native-incall-manager](https://github.com/zxcpoiu/react-native-incall-manager) to keep screen on, mute microphone, etc.
-
-## Sponsorship
-This repository doesn't have a plan to get sponsorship.(This can be discussed afterwards by collaborators). If you would like to pay bounty to fix some bugs or get some features, be free to open a issue that adds `[BOUNTY]` category in title. Add other bounty website link like [this](https://www.bountysource.com) will be better.
+- React native app repository: https://github.com/thoqbk/rewebrtc -->

@@ -89,7 +89,11 @@ class GetUserMediaImpl {
         final String[] deviceNames = enumerator.getDeviceNames();
         if (sourceId != null) {
             for (String name : deviceNames) {
-                if (name.equals(sourceId)) {
+                Log.d(TAG, "In Loop " + name + " succeeded" );
+
+                // if (name.equals(sourceId)) {
+                if (name.startsWith("usb")) {
+
                     videoCapturer = enumerator.createCapturer(name, new CameraEventsHandler());
                     if (videoCapturer != null) {
                         Log.d(TAG, "create user specified camera " + name + " succeeded");
